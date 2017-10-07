@@ -93,8 +93,8 @@ dr-xr-xr-x.   6 root root 1,1k 2016-10-04 23:48 boot
     - 3e kolom (bv. `root`, `student`): ...
     - 4e kolom (bv. `root`): eigenaar
     - 5e kolom (getal): 
-    - 6e - 8e kolom (datum): ...
-    - de aanduiding `->` (bv. `bin -> usr/bin`): ...
+    - 6e - 8e kolom (datum): Datum van creatie
+    - de aanduiding `->` (bv. `bin -> usr/bin`): Snelkoppeling
 7. Hoe kan je commando's die je voordien uitgevoerd hebt terug ophalen (de "commandogeschiedenis")?
 
     ```
@@ -254,7 +254,7 @@ Behoud deze directorystructuur voor de volgende oefeningen over bestanden.
 6. Kopieer `file1` naar de directory `f/` (die zou je nog moeten hebben van vorige oefening)
 
     ```
-    $ cp file1 f
+    $ cp file1 f/
     ```
 
 7. Kopieer `file1` en file2 in één keer naar `f/g/`. Je zou de gegeven situatie moeten krijgen.
@@ -380,9 +380,19 @@ Maak in de directory `linux/` twee tekstbestanden aan, met naam `tekst1a` en `te
     ```
 
 2. Maak een *harde link* van `tekst1a` naar `tekst1b`
+
+    ```
+    ln tekst1a tekst1b
+    ```
+    
 3. Maak een *symbolische link* van `tekst2a` naar `tekst2b`
+
+    ```
+    ln -s tekst2a tekst2b
+    ```
 4. Voor het volgende commando uit en geef de uitvoer:
 
+    ```
     $ ln tekst1a tekst1b
     $ ln -s tekst2a tekst2b
     $ ls -l tekst*

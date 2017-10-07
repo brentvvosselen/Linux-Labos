@@ -21,18 +21,18 @@ Beschrijf hier de exacte procedure hoe je dit uitgevoerd hebt. Zorg er voor dat 
 3. commando 'sudo systemctl status httpd' voor de status van apache
 commando's van systemctl: start, stop, status, restart, enable
 enable -> draaien bij start VM
-4. 'sudo firewall-cmd --list-al' geeft overzicht van alle firewall regels
+4. 'sudo firewall-cmd --list-all' geeft overzicht van alle firewall regels
 5. firewall correct configureren
 6. sudo firewall-cmd --add-service=http om http to te voegen
-belangrijk: na heropstarten vergeet firewall dit -> optie --permanent toeveogen aan commando:
+belangrijk: na heropstarten vergeet firewall dit -> optie --permanent toevoegen aan commando:
 sudo firewall-cmd -add-service=http --permanent
 dit commando voert wijzigingen niet onmiddelijk door -> zowel met als zonder permanent eens uitvoeren
 7. om poort toe te voegen: 'sudo firewall-cmd --add-port=80/tcp' (opnieuw zowel met optie permanent als zonder)
 8. testen of netwerk service correct draait: 'ss' (nieuwere versie van netstat)
 enkele opites: -l -> alle server poorten, -u -> open ip poorten, -p -> welke processen erachter draaien (voor deze optie is sudo nodig)
 9. testen of php werk: web pagina's zitten onder /var/www
-10. ga naar /var/www/html en maak in deze map een bestand 'index.php' aan (met sudo)
-11. vul bestand met html pagina (en een lijnphp: <?php phpinfo(); ?>
+10. ga naar /var/www/html en maak in deze map een bestand 'index.php' aan (met sudo) `sudo su`
+11. vul bestand met html pagina (en een lijnphp: <?php phpinfo(); ?> `echo "<?php phpinfo(); ?>" > index.php`
 12. surf naar pagina, kijk of het werkt (je ziet phpinfo)
 
 ## MariaDB (MySQL)
@@ -44,7 +44,7 @@ MariaDB is de naam van een variant (fork) van de bekende database MySQL. Onder F
 
 Beschrijf hier de exacte procedure hoe je dit uitgevoerd hebt. Zorg er voor dat je aan de hand van je beschrijving deze taken later heel vlot kan herhalen als dat nodig is. Test ook telkens na elke stap dat die correct verlopen is.
 
-1. naam package is mariadb-server, we zullen ook phpmyadmin installereni: sudo dnf install mariadb-server phpmyadmin
+1. naam package is mariadb-server, we zullen ook phpmyadmin installereni: `sudo dnf install mariadb-server phpmyadmin`
 2. gebruik systemctl (mariadb heeft id 'mariadb') om service aan te passen
 3. starten via 'sudo systemctl start mariadb' & status bekijken
 bij installeren apache, wijzigt hij de configuratie (in /etc),
